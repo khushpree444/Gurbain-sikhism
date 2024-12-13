@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nextButton = document.querySelector(".next-button");
 
     // Set the path to the PDF file
-    const pdfPath = "siri-guru-granth-sahib.pdf"; // Replace with your actual PDF path
+    const pdfPath = "shri-guru-granth-sahib.pdf"; // Replace with your actual PDF path
 
     // Update the iframe source to the PDF path
     pdfViewer.src = pdfPath;
