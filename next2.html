@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikhism Paths</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            background-color: #f3f3f3;
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 150px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #e9ecef;
+        }
+
+        .footer button {
+            width: auto;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            button {
+                width: 90%;
+                max-width: 300px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sikhism Paths</h1>
+        <div class="button-container" id="button-container">
+            <!-- Buttons will be dynamically generated here -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <button id="next-button">Next</button>
+    </div>
+
+    <script>
+        // Define the paths and their PDF links
+        const paths = [
+            { name: "Nitnem", pdf: "Nitnem.pdf" },
+            { name: "Chaupai Sahib", pdf: "Chaupai-Sahib.pdf" },
+            { name: "Sukhmani Sahib", pdf: "Sukhmani.pdf" },
+            { name: "Asa Di Vaar", pdf: "Asa Di Var.pdf" },
+            { name: "Salok Dumalle Da", pdf: "Slok dumale da.pdf" },
+            { name: "Ardas", pdf: "Ardas.pdf" },
+            { name: "Chandi Di Vaar", pdf: "Chandi Di Var.pdf" },
+        ];
+
+        // Generate buttons dynamically
+        const buttonContainer = document.getElementById('button-container');
+
+        paths.forEach(path => {
+            const button = document.createElement('button');
+            button.textContent = path.name;
+            button.addEventListener('click', () => {
+                window.open(path.pdf, '_blank');
+            });
+            buttonContainer.appendChild(button);
+        });
+
+        // Add event listener to the Next button
+        const nextButton = document.getElementById('next-button');
+        nextButton.addEventListener('click', () => {
+            window.location.href = 'nex3.html';
+        });
+    </script>
+</body>
+</html>

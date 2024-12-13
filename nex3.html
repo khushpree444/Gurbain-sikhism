@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikh Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #2980b9;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #1abc9c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Sikh Resources</h1>
+        <a href="#" class="button" id="link1">dekho-ji</a>
+        <a href="#" class="button" id="link2">sikhiwiki</a>
+        <a href="#" class="button" id="link3">nitnemsahib</a>
+        <a href="#" class="button" id="link4">basicsofsikhi</a>
+        <a href="#" class="button" id="link5">srigranth</a>
+        <a href="#" class="button" id="link6">searchgurbani</a>
+    </div>
+
+    <script>
+        // Add links to buttons dynamically
+        const links = {
+            link1: "https://www.dekho-ji.com/",
+            link2: "https://www.sikhiwiki.org",
+            link3: "https://nitnemsahib.com/",
+            link4: "https://www.basicsofsikhi.com",
+            link5: "https://www.srigranth.org",
+            link6: "https://www.searchgurbani.com/"
+        };
+
+        Object.keys(links).forEach(id => {
+            const button = document.getElementById(id);
+            button.href = links[id];
+        });
+    </script>
+</body>
+</html>
