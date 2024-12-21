@@ -1,169 +1,170 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(270deg, #ff7eb3, #ff758c, #ffd700, #87cefa);
-  background-size: 800% 800%;
-  animation: wavyBackground 10s ease infinite;
-  color: #333;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff7eb3, #ff758c, #ffd700, #87cefa);
+            background-size: 400% 400%;
+            animation: gradientBackground 15s ease infinite;
+            color: #222;
+        }
 
-@keyframes wavyBackground {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
-}
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-header {
-  background-color: #ff9800;
-  color: white;
-  text-align: center;
-  padding: 1.5rem 0;
-}
+        header {
+            background: rgba(255, 152, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+        }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-header p {
-  margin: 0.5rem 0 0;
-  font-size: 1.2rem;
-}
+        header h2 {
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-.audio-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 2rem;
-}
+        header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
 
-.audio-item {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  max-width: 300px;
-  text-align: center;
-}
+        .audio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 2rem;
+            animation: slideIn 1.5s ease;
+        }
 
-.audio-item h2 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0 1rem;
-  cursor: pointer;
-}
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
 
-.hover-animation {
-  display: inline-block;
-  position: relative;
-  color: #333;
-  transition: color 0.3s ease;
-}
+        .audio-item {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.hover-animation:hover {
-  animation: colorful-glow 3s infinite;
-}
+        .audio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-@keyframes colorful-glow {
-  0% {
-      color: #ff0000;
-      text-shadow: 0 0 10px #ff0000;
-  }
-  25% {
-      color: #00ff00;
-      text-shadow: 0 0 10px #00ff00;
-  }
-  50% {
-      color: #0000ff;
-      text-shadow: 0 0 10px #0000ff;
-  }
-  75% {
-      color: #ffff00;
-      text-shadow: 0 0 10px #ffff00;
-  }
-  100% {
-      color: #ff00ff;
-      text-shadow: 0 0 10px #ff00ff;
-  }
-}
+        .audio-item h2 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #ff5722;
+            cursor: pointer;
+            animation: textGlow 3s infinite alternate;
+        }
 
-audio {
-  width: 100%;
-  border-radius: 5px;
-  outline: none;
-}
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722;
+            }
+            to {
+                text-shadow: 0 0 20px #ff9800, 0 0 30px #ff9800;
+            }
+        }
 
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: auto;
-}
+        audio {
+            width: 100%;
+            border-radius: 8px;
+            outline: none;
+        }
 
-footer p {
-  margin: 0;
-  font-size: 1rem;
-}
+        .next-button {
+            background: linear-gradient(45deg, #ff9800, #ff5722);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            animation: bounce 2s infinite;
+            transition: background 0.3s, transform 0.3s;
+        }
 
-@media (max-width: 768px) {
-  header {
-      padding: 1rem 0;
-  }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
 
-  header h1 {
-      font-size: 1.8rem;
-  }
+        .next-button:hover {
+            background: linear-gradient(45deg, #ff5722, #ff9800);
+            transform: scale(1.1);
+        }
 
-  header p {
-      font-size: 1rem;
-  }
-}
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1rem;
+        }
 
-/* Existing styles... */
+        footer p {
+            margin: 0;
+            animation: fadeIn 2s;
+        }
 
-.next-button {
-  background-color: #ff9800; /* Button background color */
-  color: white; /* Text color */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 20px; /* Padding for the button */
-  font-size: 1.2rem; /* Font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
-  display: block; /* Make it a block element */
-  margin: 20px auto; /* Center the button */
-}
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
 
-.next-button:hover {
-  background-color: #ff5722; /* Darker shade on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
-}
+            header h2 {
+                font-size: 1.8rem;
+            }
 
-.next-button:focus {
-  outline: none; /* Remove outline on focus */
-  box-shadow: 0 0 5px #ff9800; /* Add a glow effect on focus */
-}
+            header h3 {
+                font-size: 1.2rem;
+            }
 
-
-@media (max-width: 768px) {
-  header {
-      padding: 0.5rem 0;
-  }
-
-  header h2, header h3 {
-      font-size: 1rem;
-      line-height: 1.2;
-  }
-
-  .next-button {
-      margin-top: 10px;
-  }
-}
+            .next-button {
+                margin-top: 10px;
+            }
+        }
