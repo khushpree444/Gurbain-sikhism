@@ -6,53 +6,104 @@
     <title>Sikh Resources</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
 
         .container {
             text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-out;
         }
 
         h1 {
-            color: #2c3e50;
+            color: #34495e;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .button {
             display: inline-block;
             margin: 10px;
             padding: 15px 30px;
-            font-size: 16px;
+            font-size: 1rem;
             color: #fff;
-            background-color: #2980b9;
+            background: linear-gradient(135deg, #1e88e5, #1976d2);
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s;
         }
 
         .button:hover {
-            background-color: #1abc9c;
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #43a047, #2e7d32);
+        }
+
+        .button:hover::after {
+            left: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Welcome to Sikh Resources</h1>
-        <a href="#" class="button" id="link1">dekho-ji</a>
-        <a href="#" class="button" id="link2">sikhiwiki</a>
-        <a href="#" class="button" id="link3">nitnemsahib</a>
-        <a href="#" class="button" id="link4">basicsofsikhi</a>
-        <a href="#" class="button" id="link5">srigranth</a>
-        <a href="#" class="button" id="link6">searchgurbani</a>
-        <a herf="#" class="button" id ="link7">Sikhism Widipedia</a>
+        <a href="#" class="button" id="link1">Dekho-Ji</a>
+        <a href="#" class="button" id="link2">SikhiWiki</a>
+        <a href="#" class="button" id="link3">Nitnem Sahib</a>
+        <a href="#" class="button" id="link4">Basics of Sikhi</a>
+        <a href="#" class="button" id="link5">Sri Granth</a>
+        <a href="#" class="button" id="link6">Search Gurbani</a>
+        <a href="#" class="button" id="link7">Sikhism Wikipedia</a>
     </div>
 
     <script>
