@@ -40,7 +40,7 @@
 
         h1 {
             margin-bottom: 20px;
-            font-size: 3rem;
+            font-size: 2rem; /* Reduced size */
             color: #4682b4;
             text-shadow: 0 0 10px #b0e0e6;
         }
@@ -79,6 +79,8 @@
             background: rgba(245, 245, 245, 0.9);
             border-top: 1px solid rgba(211, 211, 211, 0.5);
             animation: slideIn 1.5s ease-in-out;
+            position: sticky; /* Ensures visibility */
+            bottom: 0;
         }
 
         @keyframes slideIn {
