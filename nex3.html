@@ -3,89 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sikh Resources</title>
+    <title>Sikh Resources - Futuristic</title>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            perspective: 1000px;
         }
 
         .container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 30px 50px;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 40px 60px;
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             animation: fadeIn 1s ease-out;
+            backdrop-filter: blur(10px);
+            transform: rotateX(10deg);
         }
 
         h1 {
-            color: #34495e;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            color: #00d4ff;
+            font-size: 2rem;
+            margin-bottom: 30px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            animation: slideIn 1s ease-out;
+            letter-spacing: 2px;
+            animation: neonGlow 1.5s infinite alternate;
         }
 
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
+        @keyframes neonGlow {
+            0% {
+                text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00d4ff, 0 0 40px #00d4ff;
             }
-            to {
-                opacity: 1;
-                transform: translateX(0);
+            100% {
+                text-shadow: 0 0 20px #00d4ff, 0 0 30px #00ffea, 0 0 40px #00ffea, 0 0 50px #00ffea;
             }
         }
 
         .button {
             display: inline-block;
-            margin: 5px;
+            margin: 10px;
             padding: 15px 30px;
             font-size: 1rem;
-            color: #fff;
-            background: linear-gradient(135deg, #1e88e5, #1976d2);
+            color: #ffffff;
+            background: linear-gradient(135deg, #ff8c00, #ff4500);
             border: none;
             border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            transition: transform 0.3s ease, background 0.3s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .button::after {
+        .button::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
+            top: -50%;
+            left: -50%;
             width: 200%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.5s;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, transparent 70%);
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s;
         }
 
         .button:hover {
             transform: scale(1.1);
-            background: linear-gradient(135deg, #43a047, #2e7d32);
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6);
         }
 
-        .button:hover::after {
-            left: 0;
+        .button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #00ffea, #00d4ff);
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-50px);
             }
             to {
                 opacity: 1;
@@ -99,11 +107,11 @@
         <h1>Welcome to Sikh Resources</h1>
         <a href="#" class="button" id="link1">Dekho-Ji</a>
         <a href="#" class="button" id="link3">Nitnem Sahib</a>
-        <a herf="#" class="button" id="link4">Hukamnama Sahib</a>
+        <a href="#" class="button" id="link4">Hukamnama Sahib</a>
         <a href="#" class="button" id="link5">Sri Granth</a>
         <a href="#" class="button" id="link6">Search Gurbani</a>
-        <a herf="#" class="button" id="link7">Shri Guru Granth Sahib</a>
-        <a herf="#" class="button" id="link8"> Dasam Granth Sahib</a>
+        <a href="#" class="button" id="link7">Shri Guru Granth Sahib</a>
+        <a href="#" class="button" id="link8">Dasam Granth Sahib</a>
     </div>
 
     <script>
