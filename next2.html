@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sikhism Paths</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             min-height: 100vh;
-            background: linear-gradient(to bottom, #ffffff, #e6e6ff);
-            color: #333;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
         }
 
         .container {
@@ -36,8 +40,9 @@
 
         h1 {
             margin-bottom: 20px;
-            font-size: 2.5rem;
-            color: #444;
+            font-size: 3rem;
+            color: #00e6e6;
+            text-shadow: 0 0 10px #00e6e6, 0 0 20px #00e6e6, 0 0 30px #00e6e6;
         }
 
         .button-container {
@@ -48,31 +53,31 @@
         }
 
         button {
-            background-color: #4caf50;
-            color: white;
+            background: linear-gradient(45deg, #00c3ff, #ffff1c);
+            color: #000;
             border: none;
             border-radius: 25px;
             padding: 15px;
             font-size: 16px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
             width: 180px;
             height: 50px;
             box-sizing: border-box;
         }
 
         button:hover {
-            background-color: #388e3c;
-            transform: translateY(-5px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 6px 30px rgba(255, 20, 147, 0.5);
         }
 
         .footer {
             text-align: center;
             padding: 20px;
-            background-color: #f9f9f9;
-            border-top: 1px solid #ddd;
+            background: rgba(0, 0, 0, 0.7);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             animation: slideIn 1.5s ease-in-out;
         }
 
@@ -88,20 +93,20 @@
         }
 
         .footer button {
-            background-color: #007bff;
+            background: linear-gradient(45deg, #4a148c, #00acc1);
             color: white;
             width: auto;
             padding: 12px 25px;
             font-size: 16px;
             border-radius: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
         }
 
         .footer button:hover {
-            background-color: #0056b3;
-            transform: translateY(-5px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, #ff6f00, #ff3d00);
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.8);
         }
 
         @media (max-width: 600px) {
@@ -115,9 +120,68 @@
                 font-size: 14px;
             }
         }
+
+        /* Futuristic Animated Background */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background-animation span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 255, 255, 0.1);
+            animation: animate 20s linear infinite;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Generate random animation spans */
+        .background-animation span:nth-child(odd) {
+            animation-duration: 25s;
+            animation-delay: calc(-1s * var(--i));
+            background: rgba(255, 20, 147, 0.2);
+        }
+
+        .background-animation span:nth-child(even) {
+            animation-duration: 15s;
+            animation-delay: calc(-2s * var(--i));
+            background: rgba(0, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
+    <div class="background-animation">
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+    </div>
+
     <div class="container">
         <h1>Sikhism Paths</h1>
         <div class="button-container" id="button-container">
