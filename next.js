@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { title: "Chandi Di Vaar<br>119 to 127 (Dasam Granth)", file: "Chandi_Di_Vaar.mp3" },
         { title: "Rehraas Sahib Buda Dal", file: "Rehraas_Sahib_Budha_Dal.mp3" },
         { title: "Salok Dumalle Da", file: "Salok Dumalle Da.mp3" },
+        { title: "Shastar Naam Mala", file: "Shastar Naam Mala.mp3" },
     ];
   
     audioContainer.innerHTML = audioTracks.map(track => `
